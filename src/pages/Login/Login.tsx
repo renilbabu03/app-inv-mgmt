@@ -2,7 +2,7 @@ import React from 'react';
 import type { FormProps } from 'antd';
 import { Button, Checkbox, DatePicker, Form, Input } from 'antd';
 import dayjs from 'dayjs';
-
+import './Login.scss'
 const dateTimestamp = dayjs('2024-01-01').valueOf();
 
 type FieldType = {
@@ -16,9 +16,10 @@ const onFinishFailed: FormProps<FieldType>['onFinish'] = (values) => {
   console.log('Success:', values);
 };
 
-const Home:React.FC = () => {
+const Login:React.FC = () => {
   return (
-    <Form
+    <div className="login-container">
+        <Form
     name="basic"
     labelCol={{ span: 8 }}
     wrapperCol={{ span: 16 }}
@@ -51,6 +52,7 @@ const Home:React.FC = () => {
       </Button>
     </Form.Item>
   </Form>
+    </div>
   ) 
 }
-export default Home;
+export default Login;

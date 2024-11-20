@@ -1,14 +1,9 @@
 import React, { FC } from 'react';
 import { Outlet } from 'react-router-dom';
-
+import './AuthLayout.scss'
 const AuthLayout: FC = () => {
   return (
-    <div>
-      <header>Auth Header</header>
-      <main>
-        <Outlet /> {/* Render nested routes */}
-      </main>
-    </div>
+    <><Outlet/></>
   );
 };
 
