@@ -8,11 +8,12 @@ import {
   VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Button, Layout, Menu, theme } from 'antd';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 const { Header, Sider, Content } = Layout;
 
 const MainLayout: React.FC = () => {
+  const navigate = useNavigate(); 
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer, borderRadiusLG },
@@ -31,21 +32,33 @@ const MainLayout: React.FC = () => {
               key: '1',
               icon: <DashboardOutlined />,
               label: 'Dashboard',
+              onClick:(info)=>{
+                navigate('/dashboard')
+              }
             },
             {
               key: '2',
               icon: <VideoCameraOutlined />,
               label: 'Products',
+              onClick:(info)=>{
+                navigate('/dashboard')
+              }
             },
             {
               key: '3',
               icon: <UploadOutlined />,
               label: 'Stocks',
+              onClick:(info)=>{
+                navigate('/dashboard')
+              }
             },
             {
               key: '4',
               icon: <UploadOutlined />,
               label: 'Purchase Order',
+              onClick:(info)=>{
+                navigate('/dashboard')
+              }
             },
           ]}
         />

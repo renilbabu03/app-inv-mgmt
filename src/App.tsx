@@ -12,7 +12,7 @@ const App: FC = () => {
       <Routes>
         {/* Main Layout Routes */}
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<Home />} />
+          <Route path='/dashboard' element={<Home />} />
         </Route>
 
         {/* Auth Layout Routes */}
