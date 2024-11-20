@@ -7,6 +7,7 @@ import {
   VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Button, Layout, Menu, theme } from 'antd';
+import { Outlet } from 'react-router-dom';
 
 const { Header, Sider, Content } = Layout;
 
@@ -65,7 +66,7 @@ const MainLayout: React.FC = () => {
             borderRadius: borderRadiusLG,
           }}
         >
-          Content
+          <Outlet/>
         </Content>
       </Layout>
     </Layout>
