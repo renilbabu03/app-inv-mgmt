@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {
+  DashboardOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   UploadOutlined,
@@ -28,18 +29,23 @@ const MainLayout: React.FC = () => {
           items={[
             {
               key: '1',
-              icon: <UserOutlined />,
-              label: 'nav 1',
+              icon: <DashboardOutlined />,
+              label: 'Dashboard',
             },
             {
               key: '2',
               icon: <VideoCameraOutlined />,
-              label: 'nav 2',
+              label: 'Products',
             },
             {
               key: '3',
               icon: <UploadOutlined />,
-              label: 'nav 3',
+              label: 'Stocks',
+            },
+            {
+              key: '4',
+              icon: <UploadOutlined />,
+              label: 'Purchase Order',
             },
           ]}
         />
