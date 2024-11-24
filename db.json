@@ -1,0 +1,12 @@
+{
+    "categories": [
+      { "id": 1, "name": "Electronics", "description": "Devices and gadgets" },
+      { "id": 2, "name": "Books", "description": "Books of all genres" }
+    ],
+    "products": [
+      { "id": 1, "name": "Laptop", "categoryId": 1 },
+      { "id": 2, "name": "Mobile Phone", "categoryId": 1 },
+      { "id": 3, "name": "Fiction Book", "categoryId": 2 }
+    ]
+  }
+  

@@ -41,7 +41,7 @@ const MainLayout: React.FC = () => {
               icon: <VideoCameraOutlined />,
               label: 'Products',
               onClick:(info)=>{
-                navigate('/dashboard')
+                navigate('/products')
               }
             },
             {
