@@ -46,6 +46,14 @@ const MainLayout: React.FC = () => {
             },
             {
               key: '3',
+              icon: <VideoCameraOutlined />,
+              label: 'Categories',
+              onClick:(info)=>{
+                navigate('/categories')
+              }
+            },
+            {
+              key: '4',
               icon: <UploadOutlined />,
               label: 'Stocks',
               onClick:(info)=>{
@@ -53,7 +61,7 @@ const MainLayout: React.FC = () => {
               }
             },
             {
-              key: '4',
+              key: '5',
               icon: <UploadOutlined />,
               label: 'Purchase Order',
               onClick:(info)=>{

@@ -5,6 +5,8 @@ import AuthLayout from './layouts/AuthLayout/AuthLayout';
 import Home from './pages/Home';
 import Login from './pages/Login/Login';
 import Products from './pages/Products/Product';
+import { Categories } from './pages/Category/Category';
+import { CategoryForm } from './pages/Category/CategoryForm';
 
 
 const App: FC = () => {
@@ -16,6 +18,8 @@ const App: FC = () => {
            <Route path='/' element={<Navigate to='/dashboard' />} />
           <Route path='/dashboard' element={<Home />} />
           <Route path='/products' element={<Products />} />
+          <Route path='/categories' element={<Categories />} />
+          <Route path='/categories/add' element={<CategoryForm />} />
         </Route>
 
      
