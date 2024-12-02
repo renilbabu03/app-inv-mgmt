@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import Login from './pages/Login/Login';
 import Products from './pages/Products/Product';
 import { Categories } from './pages/Category/Category';
-import CategoryForm from './pages/Category/CategoryForm';
+import CategoryForm from './pages/Category/CategoryForm/CategoryForm';
 
 
 const App: FC = () => {
