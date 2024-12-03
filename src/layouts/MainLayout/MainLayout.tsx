@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
 import {
   DashboardOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
+  VideoCameraOutlined
 } from '@ant-design/icons';
 import { Button, Layout, Menu, theme } from 'antd';
+import React, { useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 
 const { Header, Sider, Content } = Layout;
@@ -32,7 +31,7 @@ const MainLayout: React.FC = () => {
               key: '1',
               icon: <DashboardOutlined />,
               label: 'Dashboard',
-              onClick:(info)=>{
+              onClick:()=>{
                 navigate('/dashboard')
               }
             },
@@ -40,7 +39,7 @@ const MainLayout: React.FC = () => {
               key: '2',
               icon: <VideoCameraOutlined />,
               label: 'Products',
-              onClick:(info)=>{
+              onClick:()=>{
                 navigate('/products')
               }
             },
@@ -48,7 +47,7 @@ const MainLayout: React.FC = () => {
               key: '3',
               icon: <VideoCameraOutlined />,
               label: 'Categories',
-              onClick:(info)=>{
+              onClick:()=>{
                 navigate('/categories')
               }
             },
@@ -56,7 +55,7 @@ const MainLayout: React.FC = () => {
               key: '4',
               icon: <UploadOutlined />,
               label: 'Stocks',
-              onClick:(info)=>{
+              onClick:()=>{
                 navigate('/dashboard')
               }
             },
@@ -64,7 +63,7 @@ const MainLayout: React.FC = () => {
               key: '5',
               icon: <UploadOutlined />,
               label: 'Purchase Order',
-              onClick:(info)=>{
+              onClick:()=>{
                 navigate('/dashboard')
               }
             },

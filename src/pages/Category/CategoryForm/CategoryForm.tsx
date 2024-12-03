@@ -1,16 +1,26 @@
-import { Button, Input, Typography } from 'antd';
-import React from 'react';
-import { SubmitHandler, useForm, Controller } from 'react-hook-form';
+import { Button, Input } from 'antd';
+import React, { useEffect } from 'react';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import './CategoryForm.scss';
+import { useCreateCategory } from '../../../hooks/Category/useCreateCategory';
 
-type CategoryFormData = {
+export interface CategoryFormData  {
     name: string;
 };
 
 const CategoryForm: React.FC = () => {
-    const { Title } = Typography;
     const { control, handleSubmit, formState: { errors } } = useForm<CategoryFormData>();
-const onSubmit: SubmitHandler<CategoryFormData> = data => console.log(data);
+    const { create, loading, error } = useCreateCategory();
+
+    useEffect(() => {
+        if (error) {
+            // Do something when there's an error (e.g., display a message)
+        }
+    }, [error]);
+
+    const onSubmit: SubmitHandler<CategoryFormData> = (data: CategoryFormData) => {
+        create(data);
+    }
 
     return (
         <div className="p-6 max-w-sm mx-auto bg-white rounded-lg shadow-md">
@@ -40,6 +50,12 @@ const onSubmit: SubmitHandler<CategoryFormData> = data => console.log(data);
                     )}
                 </div>
 
+                {/* Loading State */}
+                {loading && <div>Loading...</div>}
+
+                {/* Error State */}
+                {error && <div className="text-sm text-red-500 mt-2">{error}</div>}
+
                 {/* Submit Button */}
                 <Button
                     type="primary"
@@ -50,7 +66,6 @@ const onSubmit: SubmitHandler<CategoryFormData> = data => console.log(data);
                 </Button>
             </form>
         </div>
-
     );
 };
 

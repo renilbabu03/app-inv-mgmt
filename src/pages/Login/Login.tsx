@@ -1,9 +1,7 @@
 import type { FormProps } from 'antd';
 import { Button, Checkbox, Form, Input } from 'antd';
-import dayjs from 'dayjs';
 import React from 'react';
 import './Login.scss';
-const dateTimestamp = dayjs('2024-01-01').valueOf();
 
 type FieldType = {
   date?: string;
@@ -12,9 +10,7 @@ type FieldType = {
 const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
   console.log('Success:', values);
 };
-const onFinishFailed: FormProps<FieldType>['onFinish'] = (values) => {
-  console.log('Success:', values);
-};
+
 
 const Login: React.FC = () => {
   return (

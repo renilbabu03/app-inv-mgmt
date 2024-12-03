@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCategories } from '../../hooks/useCategories';
+import { useCategories } from '../../hooks/Category/useCategories';
 import { Button, Table } from 'antd';
 import { Header } from 'antd/es/layout/layout';
 import {
