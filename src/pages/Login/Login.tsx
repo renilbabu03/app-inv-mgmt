@@ -1,8 +1,8 @@
-import React from 'react';
 import type { FormProps } from 'antd';
-import { Button, Checkbox, DatePicker, Form, Input } from 'antd';
+import { Button, Checkbox, Form, Input } from 'antd';
 import dayjs from 'dayjs';
-import './Login.scss'
+import React from 'react';
+import './Login.scss';
 const dateTimestamp = dayjs('2024-01-01').valueOf();
 
 type FieldType = {

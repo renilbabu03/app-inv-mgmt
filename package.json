@@ -28,7 +28,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-     "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint ."
   },
   "eslintConfig": {
     "extends": [
@@ -49,10 +50,15 @@
     ]
   },
   "devDependencies": {
+    "@eslint/js": "^9.16.0",
     "@types/axios": "^0.14.4",
     "@types/react-router-dom": "^5.3.3",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.2",
+    "globals": "^15.13.0",
     "husky": "^9.1.7",
     "json-server": "^1.0.0-beta.3",
-    "tailwindcss": "^3.4.15"
+    "tailwindcss": "^3.4.15",
+    "typescript-eslint": "^8.17.0"
   }
 }
