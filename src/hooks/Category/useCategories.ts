@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react";
 import { Category } from "../../models/Category";
 import { fetchCategories } from "../../services/categoryService";
 
@@ -7,20 +7,25 @@ export const useCategories = () => {
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
 
-    useEffect(() => {
-        const fetchData: any = async () => {
-            try {
-                const data: any = await fetchCategories();
-                setCategories(data.data);
-            } catch (e: any) {
-                setError(e.message)
-            } finally {
-                setLoading(false);
-            }
+    // Fetch data function
+    const fetchData = useCallback(async () => {
+        setLoading(true);
+        setError(null); // Reset error state
+        try {
+            const data: any = await fetchCategories();
+            setCategories(data.data);
+        } catch (e: any) {
+            setError(e.message || "Failed to fetch categories");
+        } finally {
+            setLoading(false);
         }
-
-        fetchData();
     }, []);
 
-    return { categories, loading, error };
-}
+    // Initial data fetch
+    useEffect(() => {
+        fetchData();
+    }, [fetchData]);
+
+    // Return refetch function along with other states
+    return { categories, loading, error, refetch: fetchData };
+};

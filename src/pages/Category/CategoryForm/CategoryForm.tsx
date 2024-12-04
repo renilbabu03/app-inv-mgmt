@@ -1,8 +1,8 @@
 import { Button, Input } from 'antd';
 import React, { useEffect } from 'react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-import './CategoryForm.scss';
 import { useCreateCategory } from '../../../hooks/Category/useCreateCategory';
+import './CategoryForm.scss';
 
 export interface CategoryFormData  {
     name: string;
@@ -11,6 +11,7 @@ export interface CategoryFormData  {
 const CategoryForm: React.FC = () => {
     const { control, handleSubmit, formState: { errors } } = useForm<CategoryFormData>();
     const { create, loading, error } = useCreateCategory();
+
 
     useEffect(() => {
         if (error) {
@@ -46,7 +47,7 @@ const CategoryForm: React.FC = () => {
                         )}
                     />
                     {errors.name && (
-                        <span className="text-sm text-red-500">{errors.name.message}</span>
+                        <span className=" text-sm text-red-500">{errors.name.message}</span>
                     )}
                 </div>
 
