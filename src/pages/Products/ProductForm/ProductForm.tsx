@@ -1,9 +1,8 @@
-import { Button, DatePicker, Input, Select } from 'antd';
+import { Button, Input, Select } from 'antd';
 import React, { useEffect } from 'react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-import { useCreateCategory } from '../../../hooks/Category/useCreateCategory';
-import { useCreateProduct } from '../../../hooks/Products/useCreateProducts';
 import { useCategories } from '../../../hooks/Category/useCategories';
+import { useCreateProduct } from '../../../hooks/Products/useCreateProducts';
 import { Category } from '../../../models/Category';
 
 
@@ -91,6 +90,7 @@ const ProductForm: React.FC = () => {
                                 id="price"
                                 placeholder="Price"
                                 className="form-input"
+                                onChange={(e) => field.onChange(Number(e.target.value))}
                             />
                         )}
                     />
@@ -108,11 +108,12 @@ const ProductForm: React.FC = () => {
                                 type='number'
                                 id="quantityInStock"
                                 placeholder="Quantity In Stock"
+                                onChange={(e) => field.onChange(Number(e.target.value))}
                                 className="form-input"
                             />
                         )}
                     />
-                    <label htmlFor="price" className="form-label">
+                    <label htmlFor="brand" className="form-label">
                         Brand
                     </label>
                     <Controller
@@ -129,17 +130,7 @@ const ProductForm: React.FC = () => {
                             />
                         )}
                     />
-                    <label htmlFor="price" className="form-label">
-                        Expiration Date
-                    </label>
-                    <Controller
-                        name="expirationDate"
-                        control={control}
-                      
-                        render={({ field }) => (
-                            <DatePicker {...field} className="form-input" />
-                        )}
-                    />
+        
                     <label htmlFor="price" className="form-label">
                         Category
                     </label>
