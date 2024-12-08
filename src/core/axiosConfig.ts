@@ -18,18 +18,18 @@ axiosInstance.interceptors.request.use(
                 Authorization: `Bearer ${token}`,
             };
         }
-        console.log("Request Intercepted:", config);
+
         return config;
     },
     (error) => {
-        console.error("Request Error:", error);
+
         return Promise.reject(error);
     }
 );
 
 axiosInstance.interceptors.response.use(
     (response: AxiosResponse) => {
-        console.log("Response Intercepted:", response);
+
         return response;
     },
     (error) => {
@@ -40,7 +40,7 @@ axiosInstance.interceptors.response.use(
                 navigate('/login')
             }
         }
-        console.error("Response Error:", error);
+
         return Promise.reject(error);
     }
 );

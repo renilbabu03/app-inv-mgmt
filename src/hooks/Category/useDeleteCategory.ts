@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { deleteCategory as deleteCategoryService } from "../../services/categoryService";
+import { deleteCategory as deleteCategoryService } from "../../services/Category/categoryService";
 
 export const useDeleteCategory = () => {
     const [loading, setLoading] = useState<boolean>(false);

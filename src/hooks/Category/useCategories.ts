@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import { Category } from "../../models/Category";
-import { fetchCategories } from "../../services/categoryService";
+import { fetchCategories } from "../../services/Category/categoryService";
 
 export const useCategories = () => {
     const [categories, setCategories] = useState<Category[]>([]);

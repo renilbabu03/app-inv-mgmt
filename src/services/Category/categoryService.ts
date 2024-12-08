@@ -1,5 +1,5 @@
-import axiosInstance from "../core/axiosConfig";
-import { CategoryFormData } from "../pages/Category/CategoryForm/CategoryForm";
+import axiosInstance from "../../core/axiosConfig";
+import { CategoryFormData } from "../../pages/Category/CategoryForm/CategoryForm";
 
 
 export const fetchCategories = () => axiosInstance.get('/categories');
