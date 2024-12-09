@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { ProductFormData } from '../../pages/Products/ProductForm/ProductForm';
-import { fetchProductById } from '../../services/Product/productService';
+import { ProductFormData } from '../ProductForm/ProductForm';
+import { fetchProductById } from '../services/productService';
 
 export const useGetProductById = (id?: string) => {
     const [product, setProduct] = useState<ProductFormData | null>(null);

@@ -1,10 +1,10 @@
 
 import { Button, message, Space, Table } from 'antd';
 import React from 'react';
-import { useProducts } from '../../../hooks/Products/useProducts';
+import { useProducts } from '../hooks/useProducts';
 import { Header } from 'antd/es/layout/layout';
 import { useNavigate } from 'react-router-dom';
-import { useDeleteProduct } from '../../../hooks/Products/useDeleteProduct';
+import { useDeleteProduct } from '../hooks/useDeleteProduct';
 
 
 

@@ -1,7 +1,7 @@
 import { Button, Input } from 'antd';
 import React, { useEffect } from 'react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-import { useCreateCategory } from '../../../hooks/Category/useCreateCategory';
+import { useCreateCategory } from '../hooks/useCreateCategory';
 import './CategoryForm.scss';
 
 export interface CategoryFormData  {

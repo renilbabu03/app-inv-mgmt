@@ -1,8 +1,8 @@
 import { message, Space, Button, Table } from "antd";
 import { Header } from "antd/es/layout/layout";
 import { useNavigate } from "react-router-dom";
-import { useCategories } from "../../hooks/Category/useCategories";
-import { useDeleteCategory } from "../../hooks/Category/useDeleteCategory";
+import { useCategories } from "./hooks/useCategories";
+import { useDeleteCategory } from "./hooks/useDeleteCategory";
 
 export const Categories: React.FC = () => {
     const navigate = useNavigate();

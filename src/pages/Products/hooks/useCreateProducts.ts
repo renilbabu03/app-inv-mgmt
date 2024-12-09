@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { ProductFormData } from "../../pages/Products/ProductForm/ProductForm";
-import { createProduct } from "../../services/Product/productService";
+import { ProductFormData } from "../ProductForm/ProductForm";
+import { createProduct } from "../services/productService";
 
 export const useCreateProduct = () => {
     const [loading, setLoading] = useState<boolean>(false);

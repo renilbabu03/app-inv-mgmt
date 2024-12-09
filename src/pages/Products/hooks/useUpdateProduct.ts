@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { ProductFormData } from '../../pages/Products/ProductForm/ProductForm';
-import { updateProduct } from '../../services/Product/productService';
+import { ProductFormData } from '../ProductForm/ProductForm';
+import { updateProduct } from '../services/productService';
 
 export const useUpdateProduct = () => {
     const [loading, setLoading] = useState(false);

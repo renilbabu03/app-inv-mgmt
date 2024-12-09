@@ -1,5 +1,5 @@
-import axiosInstance from "../../core/axiosConfig";
-import { ProductFormData } from "../../pages/Products/ProductForm/ProductForm";
+import axiosInstance from "../../../core/axiosConfig";
+import { ProductFormData } from "../ProductForm/ProductForm";
 
 export const fetchProducts = () => axiosInstance.get('/products');
 export const fetchProductById = (id: string) => axiosInstance.get(`/products/${id}`);

@@ -2,10 +2,10 @@ import { Button, Input, Select } from 'antd';
 import React, { useEffect, useMemo, useState } from 'react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom'; // For extracting the ID from the URL
-import { useCategories } from '../../../hooks/Category/useCategories';
-import { useCreateProduct } from '../../../hooks/Products/useCreateProducts';
-import { useUpdateProduct } from '../../../hooks/Products/useUpdateProduct';
-import { useGetProductById } from '../../../hooks/Products/useGetProductById'; // New hook for fetching a product by ID
+import { useCategories } from '../../Category/hooks/useCategories';
+import { useCreateProduct } from '../hooks/useCreateProducts';
+import { useUpdateProduct } from '../hooks/useUpdateProduct';
+import { useGetProductById } from '../hooks/useGetProductById'; // New hook for fetching a product by ID
 import { Category } from '../../../models/Category';
 
 export interface ProductFormData {
