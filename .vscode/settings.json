@@ -1,0 +1,9 @@
+{
+    "editor.semanticTokenColorCustomizations": {
+
+    },
+    "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#571fda85",
+    "titleBar.activeForeground": "#FFFFFF"
+  }
+}

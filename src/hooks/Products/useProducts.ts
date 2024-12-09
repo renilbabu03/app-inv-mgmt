@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { fetchProducts } from '../../services/Product/productService';
 import { Product } from '../../models/Product';
 
@@ -7,20 +7,23 @@ export const useProducts = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
-    useEffect(() => {
-        const getProducts = async () => {
-            try {
-                const data: any = await fetchProducts();
-                setProducts(data.data);
-            } catch (err: any) {
-                setError(err.message);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        getProducts();
+    const fetchData = useCallback(async () => {
+        setLoading(true);
+        setError(null);
+        try {
+            const data: any = await fetchProducts();
+            setProducts(data.data);
+        } catch (e: any) {
+            setError(e.message || "Failed to fetch categories");
+        } finally {
+            setLoading(false);
+        }
     }, []);
 
-    return { products, loading, error };
+
+    useEffect(() => {
+        fetchData();
+    }, [fetchData]);
+
+    return { products, loading, error, refetch: fetchData };
 };
