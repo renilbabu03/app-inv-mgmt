@@ -32,6 +32,9 @@ const Products: React.FC = () => {
           <a onClick={() => deleteProductById(record.id)} >
             Delete
           </a>
+          <a  onClick={()=> navigate(`${record.id}`)}>
+            Edit
+          </a>
         </Space>
       ),
     },

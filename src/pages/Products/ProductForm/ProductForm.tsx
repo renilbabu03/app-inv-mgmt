@@ -6,7 +6,7 @@ import { useCreateProduct } from '../../../hooks/Products/useCreateProducts';
 import { Category } from '../../../models/Category';
 
 
-export interface ProductFormData  {
+export interface ProductFormData {
     name: string;
     description: string;
     price: number;
@@ -19,12 +19,12 @@ export interface ProductFormData  {
 const ProductForm: React.FC = () => {
     const { control, handleSubmit, formState: { errors } } = useForm<ProductFormData>();
     const { create, loading, error } = useCreateProduct();
-    const { categories, loading:categoryListLoading, error:categoryListError } = useCategories();
+    const { categories, loading: categoryListLoading, error: categoryListError } = useCategories();
 
 
     useEffect(() => {
         if (error) {
-         
+
         }
     }, [error]);
 
@@ -36,7 +36,7 @@ const ProductForm: React.FC = () => {
         <div className="p-6 max-w-sm mx-auto bg-white rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-center text-gray-800 mb-4">Add New Product</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-           
+
                 <div className="flex flex-col gap-y-1">
                     <label htmlFor="name" className="form-label">
                         Name
@@ -65,7 +65,7 @@ const ProductForm: React.FC = () => {
                         name="description"
                         control={control}
                         defaultValue=""
-                      
+
                         render={({ field }) => (
                             <Input
                                 {...field}
@@ -82,7 +82,7 @@ const ProductForm: React.FC = () => {
                         name="price"
                         control={control}
                         defaultValue={0}
-                      
+
                         render={({ field }) => (
                             <Input
                                 {...field}
@@ -101,7 +101,7 @@ const ProductForm: React.FC = () => {
                         name="quantityInStock"
                         control={control}
                         defaultValue={0}
-                      
+
                         render={({ field }) => (
                             <Input
                                 {...field}
@@ -120,7 +120,7 @@ const ProductForm: React.FC = () => {
                         name="brand"
                         control={control}
                         defaultValue=""
-                      
+
                         render={({ field }) => (
                             <Input
                                 {...field}
@@ -130,35 +130,35 @@ const ProductForm: React.FC = () => {
                             />
                         )}
                     />
-        
+
                     <label htmlFor="price" className="form-label">
                         Category
                     </label>
                     <Controller
                         name="categoryId"
                         control={control}
-                      
+
                         render={({ field }) => (
                             <Select {...field} options={
-                                categories.map((category:Category)=>{
+                                categories.map((category: Category) => {
                                     return {
-                                        value:category.id,
-                                        label:category.name
+                                        value: category.id,
+                                        label: category.name
                                     }
                                 })
                             } />
                         )}
                     />
-                 
+
                 </div>
 
-             
+
                 {loading && <div>Loading...</div>}
 
-                
+
                 {error && <div className="text-sm text-red-500 mt-2">{error}</div>}
 
-              
+
                 <Button
                     type="primary"
                     htmlType="submit"
