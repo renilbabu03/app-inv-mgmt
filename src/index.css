@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
 body {
   margin: 0;
@@ -23,4 +24,8 @@ code {
 
 .form-label{
   @apply text-gray-700 font-medium
+}
+
+.renil-logo{
+  font-family: 'Orbitron', sans-serif;
 }
