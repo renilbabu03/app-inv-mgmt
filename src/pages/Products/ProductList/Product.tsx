@@ -1,5 +1,5 @@
 
-import { Button, message, Space, Table } from 'antd';
+import { Button, message, Space, Table, Typography } from 'antd';
 import React from 'react';
 import { useProducts } from '../hooks/useProducts';
 import { Header } from 'antd/es/layout/layout';
@@ -53,17 +53,16 @@ const Products: React.FC = () => {
   const navigate = useNavigate();
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
+  const { Title } = Typography;
 
 
   return (
     <>
-      <Header style={{ padding: 0, background: 'white' }}>
+      <Header  className='bg-white flex justify-between items-center mb-3'>
+        <Title level={2}>Products</Title>
         <Button
           type="primary"
-          style={{
-            fontSize: '16px',
-            float: 'right',
-          }}
+          
           onClick={() => navigate('add')}
 
         >

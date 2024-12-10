@@ -1,4 +1,4 @@
-import { message, Space, Button, Table } from "antd";
+import { message, Space, Button, Table, Typography } from "antd";
 import { Header } from "antd/es/layout/layout";
 import { useNavigate } from "react-router-dom";
 import { useCategories } from "./hooks/useCategories";
@@ -8,7 +8,7 @@ export const Categories: React.FC = () => {
     const navigate = useNavigate();
     const { error: fetchError, loading, categories, refetch } = useCategories();
     const { deleteCategory, loading: deleting, error: deleteError } = useDeleteCategory();
-
+    const { Title } = Typography
     const deleteCategoryById = async (id: number) => {
         try {
             await deleteCategory(id); // Call the hook's function
@@ -49,15 +49,13 @@ export const Categories: React.FC = () => {
 
     return (
         <>
-            <Header style={{ padding: 0, background: 'white' }}>
+            <Header className='bg-white flex justify-between items-center mb-3'>
+                <Title level={2}>Category</Title>
                 <Button
                     type="primary"
-                    style={{
-                        fontSize: '16px',
-                        float: 'right',
-                    }}
+
                     onClick={() => navigate('add')}
-                
+
                 >
                     Add
                 </Button>
