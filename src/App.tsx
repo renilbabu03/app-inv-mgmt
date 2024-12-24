@@ -27,7 +27,7 @@ const App: FC = () => {
 
      
         <Route path="/auth" element={<AuthLayout />}>
-          <Route path='/auth' element={<Navigate to='/auth/login' />} />
+          
           <Route path="login" element={<Login />} />
         </Route>
       </Routes>
